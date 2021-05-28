@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1 -  Quiz</title>
+<style>
+
+body{
+    background-color: lightblue;
+}
+
+h1, h2{
+    text-transform: uppercase;
+    color:lightgoldenrodyellow;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:large;
+
+}
+
+.questions_area{
+    width:50%;
+}
+
+.question_box{
+    background-color:lightgoldenrodyellow;
+    border:3px darkgreen dotted;
+
+}
+</style>
+
+</head>
+
+<h1>The Bumper Quiz</h1>
+<h2>General Knowledge</h2>
+<section class="questions_area">
+<div class=question_box>
+    <p class="question">How many time zones are there in Russia? </p>
+    <p>Select One<p>
+    <label for="true">11</label>
+    <input type="checkbox" class="true">
+    <label for="true">8</label>
+    <input type="checkbox" class="false">
+    <label for="true">10</label>
+    <input type="checkbox" class="false">
+</div>
+<div class="button">
+    <button type="submit" onclick="">Submit</button>
+</div>
+<div class=question_box>
+    <p class="question">The Cherry Blossom is the national flower of Japan</p>
+    <p>Select One<p>
+    <label for="true">true</label>
+    <input type="checkbox" class="true">
+    <label for="true">false</label>
+    <input type="checkbox" class="false">
+</div>
+<div class="button">
+    <button type="submit" onclick="">Submit</button>
+</div>
+<div class=question_box>
+    <p class="question">How many stripes are there on the USA national flag?</p>
+    <p>Select One<p>
+    <label for="false">50</label>
+    <input type="checkbox" class="false">
+    <label for="true">13</label>
+    <input type="checkbox" class="true">
+    <label for="false">11</label>
+    <input type="checkbox" class="false">
+
+
+</div>
+<div class="button">
+    <button type="submit" onclick="">Submit</button>
+</div>
+<div class=question_box>
+    <p class="question">What is the national animal of Australia? </p>
+    <p>Select One<p>
+    <label for="true">Kangaroo</label>
+    <input type="checkbox" class="true">
+    <label for="false">Wombat</label>
+    <input type="checkbox" class="false">
+    <label for="false">Rattlesnake</label>
+    <input type="checkbox" class="false">
+</div>
+<div class="button">
+    <button type="submit" onclick="">Submit</button>
+</div>
+<div class=question_box>
+    <p class="question">How many days does it take for the earth to orbit the sun?</p>
+    <p>Select One<p>
+    <label for="true">1</label>
+    <input type="checkbox" class="true">
+    <label for="true">7</label>
+    <input type="checkbox" class="false">
+    <label for="true">365</label>
+    <input type="checkbox" class="false">
+</div>
+<div class="button">
+    <button type="submit" onclick="">Submit</button>
+</div>
+</section>
+<body>
+<!--
+    
+    -- Question need to link to array on each page 
+    -- (create standard html and javascript for each page and them place a button to move to the next page)
+    -- this will allow the same id to be used across each page and also function for true and false
+    -- Javascript code or function code needs to access the objects and return value of array
+    -- questionsGeneral.incorrect_answers[0,1]
+    -- Two functions one for true and one for false so that they can alternate between pages.
+    -- Empty parameters in function maybe?
+    -- Points need to be added up
+    -- Final score at the end (if else, console.log()) 
+    -- display finalScore on last page with new CSS
+    -- onclick needs to take the information from the question_area
+
+
+
+
+-->
+
+<script>
+
+    let score = 0
+
+    let answerToQuestionTrue = function(answerTrue){
+       let answerTrue  = document.getElementsByClassName("true")
+       score++
+    }
+
+    let answerToQuestionFalse = function(answerFalse){
+        let answerFalse= document.getElementsByClassName("false")
+        score = score
+
+    }
+
+    const retrieveData = function(){
+        let a = answerToQuestionFalse
+        let b = answerToQuestionTrue
+        if(a===answerFalse)
+        console.log() 
+    }
+
+    let finalScore = score
+
+
+    let questionsGeneral = [ 
+    {
+        category: "General Knowledge",
+        question: "How many time zones are there in Russia?",
+        correct_answer: 11,
+        incorrect_answers:[8, 13],
+        },
+    {
+        category: "General Knowledge",
+        question: "The cherry blossom is the national flower of Japan?",
+        correct_answer: true,
+        incorrect_answers: false,
+        },
+
+    {
+        category: "General Knowledge",
+        question: "How many stripes are there on the US flag??",
+        correct_answer: 13,
+        incorrect_answers: [14, 12],
+        },
+    {
+        category: "General Knowledge",
+        question: "What is the national animal of Australia?",
+        correct_answer: "kangaroo",
+        incorrect_answers: ["Wombat", "Rattlesnake"] 
+        },
+    {
+        category: "General Knowledge",
+        question: "How many days does it take for the earth to orbit the sun?",
+        correct_answer: 365,
+        incorrect_answers: [7, 31]
+        },
+    ]
+
+    let questionsGeography =[
+    {
+        category: "Geography",
+        question: "Sweden has the most islands in the world?",
+        correct_answer: true,
+        incorrect_answers: false
+        },
+    {
+        category: "Geography",
+        question: "What is the capital of Canada?",
+        correct_answer: "Ottawa",
+        incorrect_answers: "Toronto"
+        },
+    {
+        category: "Geography",
+        question: "What language do the speak in Brazil?",
+        correct_answer: "Portuguese",
+        incorrect_answers: ["Spanish", "English"]
+        },  
+    {
+        category: "Geography",
+        question: "What is the smallest country in the world?",
+        correct_answer: "The Vatican",
+        incorrect_answers: ["Monaco", "Faroe Islands"]
+        },
+    {
+        category: "Geography",
+        question: "What is the largest river in the world?",
+        correct_answer: "Nile",
+        incorrect_answers: "Amazon"
+        }      
+]
+
+/*	1.	Where was the first modern Olympic Games held? (Athens, 1896)
+	2.	Which football team is known as ‘The Red Devils’? (Manchester United)
+	3.	Which driver has won the most Formula 1 championships? (Michael Schumacher)
+	4.	Who is 3rd on the all-time list of female tennis Grand Slam champions? (Serena Williams)
+	5.	What was the clothing company Nike originally called? (Blue Ribbon Sports)*/
+
+/*const questionsSports=[ 
+   
+    { 
+        category:,
+        question:,
+        correct_answer:,
+        incorrect_answers:,
+
+    }
+]
+*/
+</script>
+</body>
+</html>
